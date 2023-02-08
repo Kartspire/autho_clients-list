@@ -1,26 +1,27 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { IAuthoRes } from "../../models/IAuthoRes";
+import { IAuthRes } from "../../models/IAuthRes";
+import { IError } from "../../models/IError";
 
 interface IAuth {
-  authoRes: IAuthoRes | null;
-  error: string;
+  authoRes: IAuthRes | null;
+  error: IError | null;
 }
 
 const initialState: IAuth = {
   authoRes: null,
-  error: "",
+  error: null,
 };
 
 export const authSlice = createSlice({
   name: "authSlice",
   initialState,
   reducers: {
-    authSucces(state, action: PayloadAction<IAuthoRes>) {
-      state.error = "";
+    authSucces(state, action: PayloadAction<IAuthRes>) {
+      state.error = null;
       state.authoRes = action.payload;
       localStorage.setItem("token", state.authoRes.token);
     },
-    authError(state, action: PayloadAction<string>) {
+    authError(state, action: PayloadAction<IError>) {
       state.error = action.payload;
     },
   },

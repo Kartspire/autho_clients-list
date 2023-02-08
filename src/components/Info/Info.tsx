@@ -23,7 +23,7 @@ export const Info: FC<IInfoProps> = () => {
     <div>
       <header className={styles.header}>
         <div className="container">
-          <Button onClick={returnToMain} classBtn="backBtn">
+          <Button onClick={returnToMain} classesBtn={["backBtn"]}>
             Назад
           </Button>
           <div className={styles.avatarWrapper}>
@@ -34,7 +34,7 @@ export const Info: FC<IInfoProps> = () => {
             />
           </div>
           <h2>{`${userInfo?.first_name} ${userInfo?.last_name}`}</h2>
-          <Button onClick={logOut} classBtn="exitBtn">
+          <Button onClick={logOut} classesBtn={["exitBtn"]}>
             Выйти
           </Button>
         </div>

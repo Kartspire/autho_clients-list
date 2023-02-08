@@ -17,3 +17,7 @@
 .errorMessage {
   color: #ff6161;
 }
+.errorStatus {
+  /* max-width: 200px; */
+  color: #ff6161;
+}

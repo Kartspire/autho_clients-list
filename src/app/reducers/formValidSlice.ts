@@ -34,7 +34,7 @@ const formValidSlice = createSlice({
     checkPasswordValid(state, action: PayloadAction<string | undefined>) {
       // /^(?=.*[A-Z].*[A-Z])(?=.*[0-9].*[0-9])(?=.*[a-z].*[a-z].*[a-z]).{8,}$/
 
-      !action.payload?.match(/^[а-яА-ЯёЁa-zA-Z]+$/)
+      !action.payload?.match(/^[a-zA-Z0-9]{6,}$/)
         ? (state.passwordValid = true)
         : (state.passwordValid = false);
     },

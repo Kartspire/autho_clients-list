@@ -36,7 +36,7 @@ export const Main: FC<IMainProps> = () => {
             которые ложатся на их плечи, и умеющие находить выход из любых, даже
             самых сложных ситуаций.
           </p>
-          <Button onClick={logOut} classBtn="exitBtn">
+          <Button onClick={logOut} classesBtn={["exitBtn"]}>
             Выход
           </Button>
         </div>

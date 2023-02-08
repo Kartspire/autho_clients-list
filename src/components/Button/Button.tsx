@@ -3,7 +3,8 @@ import styles from "./Button.module.css";
 
 type IButtonProps = React.PropsWithChildren<{
   type?: string;
-  classBtn?: string;
+  classesBtn: string[];
+  tab?: number;
   onClick?(event: MouseEventHandler): void;
 }> &
   React.ButtonHTMLAttributes<HTMLButtonElement>;
@@ -11,15 +12,14 @@ type IButtonProps = React.PropsWithChildren<{
 export const Button: FC<IButtonProps> = ({
   children,
   type,
-  classBtn,
+  classesBtn,
+  tab,
   onClick,
 }) => {
+  const allClasses = classesBtn.map((el) => styles[el]).join(" ");
+
   return (
-    <button
-      type={type}
-      onClick={onClick}
-      className={classBtn && styles[classBtn]}
-    >
+    <button type={type} onClick={onClick} className={allClasses} tabIndex={tab}>
       {children}
     </button>
   );

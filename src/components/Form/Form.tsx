@@ -36,7 +36,8 @@ export const Form: FC<IFormProps> = () => {
     (state) => state.formValid.repeatPasswordValid
   );
   const formValid = useAppSelector((state) => state.formValid.formValid);
-  const errorMessage = useAppSelector((state) => state.auth.error);
+  const errorMessage = useAppSelector((state) => state.auth.error?.data.error);
+  const errorStatus = useAppSelector((state) => state.auth.error?.status);
   const loading = useAppSelector((state) => state.loader.loading);
   const visiblePass = useAppSelector((state) => state.visiblePass.visiblePass);
   const visibleRepeatPass = useAppSelector(
@@ -72,6 +73,12 @@ export const Form: FC<IFormProps> = () => {
       {errorMessage && (
         <div className={styles.errorMessage}>{errorMessage}</div>
       )}
+      {errorStatus === 400 && (
+        <div className={styles.errorStatus}>
+          try to use
+          <br /> email: eve.holt@reqres.in <br /> password: pistol
+        </div>
+      )}
       <p className={styles.title}>Регистрация</p>
       <Input
         label="Имя"
@@ -98,7 +105,11 @@ export const Form: FC<IFormProps> = () => {
         <Button
           type="button"
           onClick={() => dispatch(toggleVisiblePass())}
-          classBtn={`${visiblePass ? "passBtnShow" : "passBtnHide"}`}
+          tab={-1}
+          classesBtn={[
+            "passBtn",
+            `${visiblePass ? "passBtnShow" : "passBtnHide"}`,
+          ]}
         ></Button>
       </div>
       <div className={styles.passWrapper}>
@@ -112,11 +123,15 @@ export const Form: FC<IFormProps> = () => {
         <Button
           type="button"
           onClick={() => dispatch(toggleVisibleRepeatPass())}
-          classBtn={visibleRepeatPass ? "passBtnShow" : "passBtnHide"}
+          tab={-1}
+          classesBtn={[
+            "passBtn",
+            `${visibleRepeatPass ? "passBtnShow" : "passBtnHide"}`,
+          ]}
         ></Button>
       </div>
 
-      <Button type="submit" classBtn="formBtn">
+      <Button type="submit" classesBtn={["formBtn"]}>
         Зарегистрироваться
       </Button>
     </form>
