@@ -34,7 +34,7 @@
   width: 24px;
   height: 24px;
   padding: 0;
-  border: none;
+  border: 1px solid #000;
   background: url("../../assets/icons/eye-open.svg") center no-repeat;
 }
 .passBtnHide {
@@ -44,6 +44,6 @@
   width: 24px;
   height: 24px;
   padding: 0;
-  border: none;
+  border: 1px solid #000;
   background: url("../../assets/icons/eye-closed.svg") center no-repeat;
 }

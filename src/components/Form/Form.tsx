@@ -96,6 +96,7 @@ export const Form: FC<IFormProps> = () => {
           validText={"Пароль ненадежный"}
         />
         <Button
+          type="button"
           onClick={() => dispatch(toggleVisiblePass())}
           classBtn={`${visiblePass ? "passBtnShow" : "passBtnHide"}`}
         ></Button>
@@ -109,6 +110,7 @@ export const Form: FC<IFormProps> = () => {
           validText={"Пароли не совпадают"}
         />
         <Button
+          type="button"
           onClick={() => dispatch(toggleVisibleRepeatPass())}
           classBtn={visibleRepeatPass ? "passBtnShow" : "passBtnHide"}
         ></Button>
