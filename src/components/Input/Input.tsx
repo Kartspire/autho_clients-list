@@ -1,6 +1,4 @@
 import React, { FC, MutableRefObject, memo } from "react";
-import { useAppSelector } from "../../app/hooks";
-import { Button } from "../Button";
 import styles from "./Input.module.css";
 
 interface IInputProps {
@@ -14,8 +12,6 @@ interface IInputProps {
 
 export const Input: FC<IInputProps> = memo(
   ({ label, type, refElement, text, valid, validText }) => {
-    console.log("render input");
-
     return (
       <div className={styles.inputWrapper}>
         <label>

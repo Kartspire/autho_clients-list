@@ -1,6 +1,5 @@
 import { useAppDispatch } from "../../app/hooks";
-import { addLike, removeLike } from "../../app/reducers/usersSlice";
-import { patchUserLike, patchUserUnLike } from "../../asyncActions/like";
+import { patchUserLike, patchUserUnLike } from "../../utils/like";
 import { IUser } from "../../models/IUsers";
 import styles from "./Like.module.css";
 

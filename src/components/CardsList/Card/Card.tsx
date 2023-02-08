@@ -1,9 +1,7 @@
 import styles from "./Card.module.css";
 import { useNavigate } from "react-router-dom";
 import { IUser } from "../../../models/IUsers";
-import { getUserInfo } from "../../../asyncActions/userInfo";
 import { useAppDispatch } from "../../../app/hooks";
-import { Button } from "../../Button";
 import { Like } from "../../Like";
 import { FC, memo } from "react";
 import { setUserInfo } from "../../../app/reducers/userInfoSlice";
@@ -13,7 +11,6 @@ interface ICardProps {
 }
 
 export const Card: FC<ICardProps> = memo(({ user }) => {
-  console.log("render card");
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 

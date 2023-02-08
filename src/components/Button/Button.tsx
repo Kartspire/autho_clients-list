@@ -1,4 +1,4 @@
-import React, { FC, FormEvent, MouseEvent, MouseEventHandler } from "react";
+import React, { FC, MouseEventHandler } from "react";
 import styles from "./Button.module.css";
 
 type IButtonProps = React.PropsWithChildren<{

@@ -18,7 +18,6 @@ export const authSlice = createSlice({
     authSucces(state, action: PayloadAction<IAuthoRes>) {
       state.error = "";
       state.authoRes = action.payload;
-      console.log(state.authoRes);
       localStorage.setItem("token", state.authoRes.token);
     },
     authError(state, action: PayloadAction<string>) {

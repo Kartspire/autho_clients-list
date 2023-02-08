@@ -1,12 +1,4 @@
-import React, {
-  FC,
-  FormEvent,
-  MouseEvent,
-  ReactNode,
-  useEffect,
-  useRef,
-} from "react";
-import { useNavigate } from "react-router-dom";
+import React, { FC, FormEvent, useEffect, useRef } from "react";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import {
   checkEmailValid,
@@ -14,7 +6,6 @@ import {
   checkPasswordValid,
   checkRepeatPasswordValid,
   checkUserNameValid,
-  resetValid,
 } from "../../app/reducers/formValidSlice";
 import {
   toggleVisiblePass,
@@ -23,13 +14,11 @@ import {
 import { auth } from "../../asyncActions/auth";
 import { Button } from "../Button";
 import { Input } from "../Input";
-import { Loader } from "../Loader";
 import styles from "./Form.module.css";
 
 interface IFormProps {}
 
 export const Form: FC<IFormProps> = () => {
-  console.log("render form");
   const userNameInput = useRef<HTMLInputElement | null>(null);
   const emailInput = useRef<HTMLInputElement | null>(null);
   const passwordInput = useRef<HTMLInputElement | null>(null);
@@ -80,8 +69,9 @@ export const Form: FC<IFormProps> = () => {
       onSubmit={(event) => submitForm(event)}
       className={` ${styles.loginForm} ${loading && styles.formLoading}`}
     >
-      {/* {loading && <Loader />} */}
-      {errorMessage && <div>{errorMessage}</div>}
+      {errorMessage && (
+        <div className={styles.errorMessage}>{errorMessage}</div>
+      )}
       <p className={styles.title}>Регистрация</p>
       <Input
         label="Имя"

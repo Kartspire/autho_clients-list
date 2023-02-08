@@ -4,13 +4,13 @@ import { IUser } from "../../models/IUsers";
 interface IUsersState {
   users: IUser[];
   error: string;
-  usersIsLoaded: boolean;
+  usersWasLoaded: boolean;
 }
 
 const initialState: IUsersState = {
   users: [],
   error: "",
-  usersIsLoaded: false,
+  usersWasLoaded: false,
 };
 
 const usersSLice = createSlice({
@@ -24,8 +24,7 @@ const usersSLice = createSlice({
           ? (el.liked = true)
           : (el.liked = false)
       );
-      state.usersIsLoaded = true;
-      console.log(state.users);
+      state.usersWasLoaded = true;
     },
     setUsersError(state, action: PayloadAction<string>) {
       state.error = action.payload;
@@ -45,7 +44,6 @@ const usersSLice = createSlice({
         }
         return el;
       });
-      console.log(state.users);
     },
   },
 });

@@ -52,7 +52,6 @@ const formValidSlice = createSlice({
       ) {
         state.formValid = true;
       } else state.formValid = false;
-      console.log(state.formValid);
     },
     resetValid(state) {
       state.formValid = false;

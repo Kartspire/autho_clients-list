@@ -13,7 +13,7 @@ export const getUsers = () => async (dispatch: AppDispatch) => {
   } catch (error) {
     console.log(error);
     if (error instanceof AxiosError) {
-      dispatch(setUsersError(error.response?.data.error));
+      dispatch(setUsersError(error.message));
       dispatch(toggleLoader());
     }
   }

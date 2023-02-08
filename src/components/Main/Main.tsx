@@ -1,7 +1,7 @@
 import React, { FC, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
-import { checkFormValid, resetValid } from "../../app/reducers/formValidSlice";
+import { resetValid } from "../../app/reducers/formValidSlice";
 import { getUsers } from "../../asyncActions/users";
 import { Button } from "../Button";
 import { CardsList } from "../CardsList";
@@ -10,17 +10,16 @@ import styles from "./Main.module.css";
 interface IMainProps {}
 
 export const Main: FC<IMainProps> = () => {
-  console.log("render main");
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
-  const usersIsLoaded = useAppSelector((state) => state.users.usersIsLoaded);
-  // const users = useAppSelector((state) => state.users.users);
+  const usersWasLoaded = useAppSelector((state) => state.users.usersWasLoaded);
+  const errorMessage = useAppSelector((state) => state.users.error);
 
   useEffect(() => {
     dispatch(resetValid());
-    if (!usersIsLoaded) dispatch(getUsers());
-  }, [usersIsLoaded]);
+    if (!usersWasLoaded && !errorMessage) dispatch(getUsers());
+  }, [usersWasLoaded]);
 
   function logOut() {
     navigate("/");
@@ -44,6 +43,9 @@ export const Main: FC<IMainProps> = () => {
       </header>
       <main className={styles.main}>
         <div className="container">
+          {errorMessage && (
+            <div className={styles.errorMessage}>{errorMessage}</div>
+          )}
           <CardsList />
         </div>
       </main>

@@ -1,15 +1,11 @@
 import { FC } from "react";
 import { useAppSelector } from "../../app/hooks";
-import { IUser } from "../../models/IUsers";
 import { Card } from "./Card/Card";
 import styles from "./Cardslist.module.css";
 
-interface IUsersListProps {
-  // users: IUser[];
-}
+interface IUsersListProps {}
 
 export const CardsList: FC<IUsersListProps> = () => {
-  console.log("render cardslist");
   const users = useAppSelector((state) => state.users.users);
 
   const cards = users.map((el) => <Card key={el.id} user={el} />);
