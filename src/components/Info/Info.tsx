@@ -39,6 +39,21 @@ export const Info: FC<IInfoProps> = () => {
           </Button>
         </div>
       </header>
+      <div className="container">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis
+          cumque, natus quasi deserunt eum eaque corporis ut beatae voluptatum
+          deleniti accusantium tempore sunt vero nam fugit, ipsa explicabo
+          laborum iure non. Dicta odio labore pariatur nobis corporis quidem,
+          magni quibusdam distinctio impedit nulla cumque iste sit blanditiis
+          ipsum atque nisi illum! Minus nemo recusandae nobis eligendi nostrum
+          facilis ducimus, id iure repellendus at! Laudantium quibusdam maiores
+          obcaecati voluptates voluptas porro at ipsum neque ipsam unde vero,
+          sapiente similique tempora, debitis atque nesciunt reprehenderit? Eos
+          ea dolor aliquam modi? Nulla libero repellat dolorem quis ipsum quos
+          saepe, obcaecati officia labore nesciunt?
+        </p>
+      </div>
     </div>
   );
 };

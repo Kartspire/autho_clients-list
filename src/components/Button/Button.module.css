@@ -41,3 +41,19 @@
 .passBtnHide {
   background: url("../../assets/icons/eye-closed.svg") center no-repeat;
 }
+@media screen and (max-width: 620px) {
+  .exitBtn {
+    top: -40px;
+    right: -26px;
+    border: none;
+    color: transparent;
+    background: url("../../assets/icons/exit-btn.svg") center no-repeat;
+  }
+  .backBtn {
+    top: -40px;
+    left: -26px;
+    border: none;
+    color: transparent;
+    background: url("../../assets/icons/back-btn.svg") center no-repeat;
+  }
+}
