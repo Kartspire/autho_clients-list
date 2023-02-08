@@ -1,5 +1,11 @@
 import { useState } from "react";
-import { BrowserRouter, Route, Routes, useNavigate } from "react-router-dom";
+import {
+  BrowserRouter,
+  HashRouter,
+  Route,
+  Routes,
+  useNavigate,
+} from "react-router-dom";
 import { Info } from "./components/Info";
 import { Login } from "./components/Login";
 import { Main } from "./components/Main";
@@ -8,7 +14,7 @@ import "./main.global.css";
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route path="/" element={<Login />} />
         <Route
@@ -37,7 +43,7 @@ function App() {
           />
         </Route>
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
