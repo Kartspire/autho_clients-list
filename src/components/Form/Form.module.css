@@ -1,0 +1,16 @@
+.loginForm {
+  width: 500px;
+  padding: 16px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(000, 000, 000, 8%);
+}
+.title {
+  margin-bottom: 16px;
+  font-size: 20px;
+}
+.formLoading {
+  filter: blur(1px);
+}
+.passWrapper {
+  position: relative;
+}

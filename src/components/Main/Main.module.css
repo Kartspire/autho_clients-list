@@ -1,0 +1,18 @@
+.header {
+  /* height: 265px; */
+  margin-bottom: 48px;
+  padding: 64px 0;
+  background: #512689;
+  color: white;
+}
+.title {
+  margin-bottom: 16px;
+  font-size: 64px;
+  line-height: 75px;
+}
+.subTitle {
+  max-width: 864px;
+  text-align: center;
+  font-size: 20px;
+  line-height: 23px;
+}

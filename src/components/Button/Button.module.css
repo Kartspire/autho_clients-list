@@ -1,0 +1,49 @@
+.exitBtn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 8px 16px;
+  background: transparent;
+  border: 1px solid white;
+  border-radius: 8px;
+  color: white;
+}
+.formBtn {
+  width: 100%;
+  padding: 13px 0;
+  background: #512689;
+  color: white;
+  border: none;
+  border-radius: 8px;
+}
+.backBtn {
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 8px 16px;
+  background: transparent;
+  border: 1px solid white;
+  border-radius: 8px;
+  color: white;
+}
+
+.passBtnShow {
+  position: absolute;
+  top: 47px;
+  right: 10px;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: none;
+  background: url("../../assets/icons/eye-open.svg") center no-repeat;
+}
+.passBtnHide {
+  position: absolute;
+  top: 47px;
+  right: 10px;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: none;
+  background: url("../../assets/icons/eye-closed.svg") center no-repeat;
+}

@@ -1,0 +1,10 @@
+.cardsList {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: start;
+  align-items: space-between;
+  list-style: none;
+}
